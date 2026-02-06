@@ -17,7 +17,7 @@ public static class DistributedApplicationBuilderExtensions
         public IDistributedApplicationBuilder WithToxicDefaults()
         {
             builder
-                .WithHostCertificates()
+                .WithCustomHttpsCertificates()
                 .WithSecureHealthChecks()
                 .WithCodespacesSupport();
 
