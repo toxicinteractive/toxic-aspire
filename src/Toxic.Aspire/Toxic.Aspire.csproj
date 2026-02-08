@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -9,7 +9,7 @@
 
     <IsPackable>true</IsPackable>
     <PackageId>Toxic.Aspire</PackageId>
-    <Version>13.1.0-beta.2</Version>
+    <Version>13.1.0-beta.3</Version>
     <Company>Toxic Interactive Solutions</Company>
     <PackageTags>Aspire;Azure;Codespaces;Umbraco</PackageTags>
     <Description>Contains sensible conventions and utilities for Aspire projects that are deployed to Azure.</Description>
