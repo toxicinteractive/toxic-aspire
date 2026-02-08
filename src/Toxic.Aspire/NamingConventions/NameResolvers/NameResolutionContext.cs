@@ -30,9 +30,9 @@ public class NameResolutionContext
     public AzureLocation? ResourceRegion { get; init; }
 
     /// <summary>
-    /// Gets the optional resource workload name in the case of multiple resources with otherwise identical names. E.g. "cms" for a CMS web app.
+    /// Gets the optional resource workload name when deployed to Azure. E.g. "cms" for a CMS web app.
     /// </summary>
-    public string? WorkloadName { get; init; }
+    public string? AzureWorkloadName { get; init; }
 
     /// <summary>
     /// Gets or sets whether the resource is region-based and not global (if the region should be part of the name).

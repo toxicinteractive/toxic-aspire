@@ -5,7 +5,7 @@ namespace Toxic.Aspire.NamingConventions.NameResolvers;
 /// <summary>
 /// The default resolver for Azure resource names according to the defined standard naming convention.
 /// This is used by default for all resources but can be overridden by registering a type-specific singleton for a particular resource.
-/// Produces something like "ca-cms-hgfse-prod-swc" (container app, cms workload, hgfse project, prod environment, sweden central region).
+/// Produces something like "ca-hgfse-cms-prod-swc" (container app, hgfse project, cms workload, prod environment, sweden central region).
 /// </summary>
 public class DefaultResourceNameResolver<T> : IResourceNameResolver<T> where T : ProvisionableResource
 {
@@ -23,11 +23,11 @@ public class DefaultResourceNameResolver<T> : IResourceNameResolver<T> where T :
 
     public virtual string ResolveName(T resource, NameResolutionContext context)
     {
-        // e.g. "ca-cms-hgfse-prod-swc"
+        // e.g. "ca-hgfse-cms-prod-swc"
         var parts = new List<string?> {
             ResourcePrefixes.GetResourcePrefix(resource),
-            context.WorkloadName,
             context.ProjectName,
+            context.AzureWorkloadName,
             _environmentNameResolver.ResolveEnvironmentName(context.EnvironmentName),
             context.SupportsRegion ?
                 RegionNames.GetRegionName(context.ResourceRegion ?? context.DefaultRegion) :

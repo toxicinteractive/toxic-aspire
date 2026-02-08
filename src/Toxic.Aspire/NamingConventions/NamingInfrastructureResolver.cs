@@ -81,7 +81,7 @@ internal class NamingInfrastructureResolver : InfrastructureResolver
             nameResolver == null))
         {
             // we have a defined workload name and it should override the entire resource name
-            SetResourceName(resource, workloadNameAssociation.WorkloadName);
+            SetResourceName(resource, workloadNameAssociation.AzureWorkloadName);
             return;
         }
 
@@ -91,7 +91,7 @@ internal class NamingInfrastructureResolver : InfrastructureResolver
             SetResourceName(resource, nameResolver.ResolveName(resource, new NameResolutionContext
             {
                 ProjectName = _projectName,
-                WorkloadName = workloadNameAssociation?.WorkloadName,
+                AzureWorkloadName = workloadNameAssociation?.AzureWorkloadName,
                 EnvironmentName = _environmentName,
                 DefaultRegion = _defaultRegion,
                 ResourceRegion = GetResourceLocation(resource),
@@ -134,7 +134,7 @@ internal class NamingInfrastructureResolver : InfrastructureResolver
 
         if (!string.IsNullOrWhiteSpace(resourceName?.Value))
         {
-            // find a registered "workload name association" set by WithWorkloadName() for this resource
+            // find a registered "Azure workload name association" for this resource
             return ServiceProvider.GetKeyedService<ResourceWorkloadNameAssociation>(resourceName.Value);
         }
 
