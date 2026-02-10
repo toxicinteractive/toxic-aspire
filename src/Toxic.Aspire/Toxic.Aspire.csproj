@@ -9,7 +9,7 @@
 
     <IsPackable>true</IsPackable>
     <PackageId>Toxic.Aspire</PackageId>
-    <Version>13.1.0-beta.4</Version>
+    <Version>13.1.0-beta.5</Version>
     <Company>Toxic Interactive Solutions</Company>
     <PackageTags>Aspire;Azure;Codespaces;Umbraco</PackageTags>
     <Description>Contains sensible conventions and utilities for Aspire projects that are deployed to Azure.</Description>
